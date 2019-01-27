@@ -107,6 +107,7 @@ namespace DynamicReadingService.WebAPI
                 options.AddPolicy("Admin", policy => policy.RequireClaim(Roles.ROLE_ADMIN));
             });
             SistemaConfig sistemaConfig = Configuration.GetSection("SistemaConfig").Get<SistemaConfig>();
+            services.AddSingleton(sistemaConfig);
             services.AddCors(options =>
             {
                 options.AddPolicy("CorsPolicy",
@@ -148,7 +149,7 @@ namespace DynamicReadingService.WebAPI
             app.UseAuthentication();
 
             app.UseHttpsRedirection();
-            app.UseMvc();
+            app.UseMvcWithDefaultRoute();
 
             dbContext.Database.EnsureCreated();
         }
