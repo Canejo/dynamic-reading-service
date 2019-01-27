@@ -11,5 +11,6 @@ namespace DynamicReadingService.WebAPI.Controllers.v1
     [ApiController]
     public class ArticleController : ControllerBase
     {
+
     }
 }
