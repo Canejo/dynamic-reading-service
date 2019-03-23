@@ -4,10 +4,12 @@ using System.Linq;
 using System.Threading.Tasks;
 using DynamicReadingService.API.Infrastructure.Extensions;
 using DynamicReadingService.Core.Config;
+using DynamicReadingService.Data;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
@@ -28,6 +30,8 @@ namespace DynamicReadingService.API
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+
+            services.AddDbContext<DynamicReadingServiceContext>(options => options.UseMySql(Configuration["ConnectionStrings:DefaultConnection"]));
 
             SistemaConfig sistemaConfig = Configuration.GetSection("SistemaConfig").Get<SistemaConfig>();
             sistemaConfig.Versao = typeof(Startup).Assembly.GetName().Version.ToString();
