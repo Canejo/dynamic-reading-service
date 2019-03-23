@@ -1,0 +1,22 @@
+#.travis.yml
+
+language: csharp
+mono: none
+dotnet: 2.1
+os: linux
+dist: trusty
+sudo: false
+branches:
+  only:
+  - master
+env:
+  global:
+    - DOTNET_SKIP_FIRST_TIME_EXPERIENCE: true
+    - DOTNET_CLI_TELEMETRY_OPTOUT: 1
+
+# You must run this command to give Travis permissions to execute the build.sh shell script:
+# git update-index --chmod=+x build.sh
+before_install:
+  - chmod +x build.sh
+script:
+  - ./build.sh
