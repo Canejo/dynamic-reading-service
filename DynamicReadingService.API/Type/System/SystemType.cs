@@ -6,17 +6,17 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace DynamicReadingService.API.Type.Sistema
+namespace DynamicReadingService.API.Type.System
 {
-    public class SistemaType : ObjectGraphType<SistemaConfig>, IGraphQLType
+    public class SystemType : ObjectGraphType<SystemConfig>, IGraphQLType
     {
-        public SistemaType()
+        public SystemType()
         {
-            Field(x => x.NomeSistema);
+            Field(x => x.Name);
             Field(x => x.UrlWeb);
             Field(x => x.UrlWebApi);
-            Field(x => x.Ambiente);
-            Field(x => x.Versao);
+            Field(x => x.Environment);
+            Field(x => x.Version);
         }
     }
 }

@@ -4,9 +4,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace DynamicReadingService.API.Resolver.Sistema
+namespace DynamicReadingService.API.Resolver.System
 {
-    public interface ISistemaResolver : IQueryResolver
+    public interface ISystemResolver : IQueryResolver
     {
     }
 }

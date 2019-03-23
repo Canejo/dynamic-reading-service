@@ -33,14 +33,14 @@ namespace DynamicReadingService.API
 
             services.AddDbContext<DynamicReadingServiceContext>(options => options.UseMySql(Configuration["ConnectionStrings:DefaultConnection"]));
 
-            SistemaConfig sistemaConfig = Configuration.GetSection("SistemaConfig").Get<SistemaConfig>();
-            sistemaConfig.Versao = typeof(Startup).Assembly.GetName().Version.ToString();
-            services.AddSingleton(sistemaConfig);
+            SystemConfig systemConfig = Configuration.GetSection("SystemConfig").Get<SystemConfig>();
+            systemConfig.Version = typeof(Startup).Assembly.GetName().Version.ToString();
+            services.AddSingleton(systemConfig);
             services.AddCors(options =>
             {
                 options.AddPolicy("CorsPolicy",
                     builder => builder
-                      .WithOrigins(sistemaConfig.UrlWeb)
+                      .WithOrigins(systemConfig.UrlWeb)
                       .AllowAnyMethod()
                       .AllowAnyHeader()
                       .AllowCredentials()

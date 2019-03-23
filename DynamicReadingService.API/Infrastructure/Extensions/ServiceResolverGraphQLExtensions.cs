@@ -1,4 +1,4 @@
-﻿using DynamicReadingService.API.Resolver.Sistema;
+﻿using DynamicReadingService.API.Resolver.System;
 using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Collections.Generic;
@@ -11,7 +11,7 @@ namespace DynamicReadingService.API.Infrastructure.Extensions
     {
         public static IServiceCollection AddResolverGraphQL(this IServiceCollection services)
         {
-            services.AddTransient<ISistemaResolver, SistemaResolver>();
+            services.AddTransient<ISystemResolver, SystemResolver>();
 
             return services;
         }

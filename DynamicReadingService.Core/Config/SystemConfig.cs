@@ -4,11 +4,11 @@ using System.Text;
 
 namespace DynamicReadingService.Core.Config
 {
-    public class SistemaConfig
+    public class SystemConfig
     {
-        public string NomeSistema { get; set; }
-        public string Versao { get; set; }
-        public string Ambiente { get; set; }
+        public string Name { get; set; }
+        public string Version { get; set; }
+        public string Environment { get; set; }
         public string UrlWeb { get; set; }
         public string UrlWebApi { get; set; }
     }
