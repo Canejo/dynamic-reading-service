@@ -11,5 +11,6 @@ namespace DynamicReadingService.Core.Config
         public string Environment { get; set; }
         public string UrlWeb { get; set; }
         public string UrlWebApi { get; set; }
+        public string PocketKey { get; set; }
     }
 }

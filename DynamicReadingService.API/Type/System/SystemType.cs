@@ -17,6 +17,7 @@ namespace DynamicReadingService.API.Type.System
             Field(x => x.UrlWebApi);
             Field(x => x.Environment);
             Field(x => x.Version);
+            Field(x => x.PocketKey); 
         }
     }
 }
