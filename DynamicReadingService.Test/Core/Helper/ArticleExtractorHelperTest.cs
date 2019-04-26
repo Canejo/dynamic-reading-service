@@ -13,8 +13,8 @@ namespace DynamicReadingService.Test.Core.Helper
         public void ArticleExtractor_Success()
         {
             string url = "https://www.wuxiaworld.com/novel/lord-of-all-realms/chapter-1-an-unstable-situation";
-            string content = ArticleExtractorHelper.Run(url);
-            Assert.IsNotNull(content);
+            var result = ArticleExtractorHelper.Run(url);
+            Assert.IsTrue(result != null && !string.IsNullOrWhiteSpace(result.Content));
         }
     }
 }
